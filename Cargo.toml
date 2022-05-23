@@ -6,7 +6,7 @@ authors = ["Madhav Kumar"]
 description = "An SDK to interact with pieces of the original Line Rider game"
 repository = "https://github.com/kumar-ish/draw-lr/"
 readme = "README.md"
-license = "MIT License"
+license = "MIT"
 keywords = ["gamedev", "graphics", "line_rider", "line-rider", "lr"]
 exclude = ["**/*.json"]
 
