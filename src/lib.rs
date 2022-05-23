@@ -1,5 +1,6 @@
 #![warn(missing_docs)]
-//! Crate to make maps & interact with the [Line Rider](https://linerider.com) game.
+//! Crate to make maps & interact with the [Line Rider](https://linerider.com) game. The base module in the crate contains the
+//! main object definitions and the extension(s) build on top of them.
 
 use std::fmt::Debug;
 use std::fs;
@@ -157,13 +158,13 @@ pub mod extension {
         Rand,
         /// Random coordinates over range
         RandRange(Coordinates, Coordinates),
-        /// Specify exact coordinates (Some) or use default (None)
+        /// Specify exact coordinates (`Some`) or use default (`None`)
         Other(Option<Coordinates>),
         /// Evenly space out coordinates over range
         EvenlySpaced(Coordinates, Coordinates),
     }
 
-    /// Adds `n` riders to a given `game`, at some `start_position` and `speed_range`; all with characteristic `remountable`.
+    /// Creates a list of `n` riders, at some `start_position` and `speed_range`; all with characteristic `remountable`.
     pub fn create_riders(n: usize, start_position: CoordOptions, speed_range: CoordOptions, remountable: Option<usize>) -> Vec<Rider> {
         fn check_min_max(min: f64, max: f64) {
             // Min/max checks might not be strictly necessary, but may prevent bugs.
